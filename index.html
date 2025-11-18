@@ -1,197 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Campanha de Vacinação</title>
-  <style>
-    :root {
-      --primary: #0a8cd6;
-      --secondary: #e9f6ff;
-      --dark: #08344a;
-      --radius: 12px;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--secondary);
-      color: var(--dark);
-    }
-
-    header {
-      background: var(--primary);
-      padding: 20px;
-      text-align: center;
-      color: white;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 12px;
-      background: white;
-      border-bottom: 1px solid #cde4f3;
-    }
-
-    nav a {
-      text-decoration: none;
-      font-weight: bold;
-      color: var(--dark);
-    }
-
-    .hero {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .hero img {
-      max-width: 100%;
-      border-radius: var(--radius);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: var(--radius);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: var(--radius);
-    }
-
-    .btn {
-      background: var(--primary);
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: var(--radius);
-      cursor: pointer;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: var(--primary);
-      color: white;
-      margin-top: 40px;
-    }
-  </style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Campanha de Vacinação</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Campanha de Vacinação</h1>
-    <p>Proteja sua saúde, proteja quem você ama.</p>
-  </header>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#campanhas">Campanhas</a>
-    <a href="#cadastro">Cadastrar-se</a>
-  </nav>
+<section id="cadastro" class="section">
+<h2>Cadastre-se para receber lembretes</h2>
+<form id="form">
+<input type="text" id="nome" placeholder="Seu nome" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: var(--radius); border:1px solid #ccc;">
+<input type="email" id="email" placeholder="Seu e-mail" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: var(--radius); border:1px solid #ccc;">
+<button class="btn" type="submit">Cadastrar</button>
+</form>
+<p id="msg" style="font-weight:bold; margin-top:10px;"></p>
+</section>
 
-  <section class="hero">
-    <img src="unimedcuritiba_jul22_vacinarse_0.png" alt="Vacinação" />
-  </section>
 
-  <section id="campanhas" class="section">
-    <h2>Campanhas Ativas</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="vacinacao_infantil008_0_1.jpg" alt="Campanha" />
-        <h3>Vacinação Infantil</h3>
-        <p>Imunização completa para crianças de 0 a 12 anos.</p>
-        <button class="btn" onclick="inscrever('Vacinação Infantil')">Inscrever-se</button>
-      </div>
+<footer>
+<p>Campanha de Vacinação © 2025</p>
+ 
 
-      <div class="card">
-        <img src="paciente-senior-do-sexo-masculino-sendo-vacinado-para-coronavirus-860x573.jpg" alt="Campanha" />
-        <h3>Vacina Contra Gripe</h3>
-        <p>Disponível para todas as idades.</p>
-        <button class="btn" onclick="inscrever('Vacina Contra Gripe')">Inscrever-se</button>
-      </div>
+<footer>
+<p>Campanha de Vacinação © 2025</p>
+<section id="voluntarios" class="section">
+<h2>Cadastro de Voluntários</h2>
+<form id="formVoluntarios">
+<input type="text" id="vNome" placeholder="Nome completo" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: var(--radius); border:1px solid #ccc;">
+<input type="tel" id="vTel" placeholder="Número de telefone" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: var(--radius); border:1px solid #ccc;">
+<input type="email" id="vEmail" placeholder="E-mail" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: var(--radius); border:1px solid #ccc;">
+<input type="text" id="vEnd" placeholder="Endereço" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: var(--radius); border:1px solid #ccc;">
+<button class="btn" type="submit">Cadastrar Voluntário</button>
+</form>
+<p id="msgVoluntario" style="font-weight:bold; margin-top:10px;"></p>
+</section>
 
-      <div class="card">
-        <img src="vacina-coronavirus-492x258.jpg" alt="Campanha" />
-        <h3>COVID-19</h3>
-        <p>Reforços e imunização completa.</p>
-        <button class="btn" onclick="inscrever('COVID-19')">Inscrever-se</button>
-      </div>
-    </div>
-  </section>
 
-  <section id="cadastro" class="section">
-    <h2>Cadastre-se para receber lembretes</h2>
-    <form id="form">
-      <input type="text" id="nome" placeholder="Seu nome" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: var(--radius); border:1px solid #ccc;">
-      <input type="email" id="email" placeholder="Seu e-mail" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: var(--radius); border:1px solid #ccc;">
-      <button class="btn" type="submit">Cadastrar</button>
-    </form>
-    <p id="msg" style="font-weight:bold; margin-top:10px;"></p>
-  </section>
+<section id="contato" class="section">
+<h2>Fale Conosco</h2>
+<p><strong>Telefone:</strong> (11) 4002-8922</p>
+<p><strong>Email:</strong> contato@campanhavacinacao.org</p>
+</section>
 
-  <footer>
-    <p>Campanha de Vacinação do nicolas © 2025</p>
-    <section id="voluntarios" class="section">
-    <h2>Cadastro de Voluntários</h2>
-    <form id="formVoluntarios">
-      <input type="text" id="vNome" placeholder="Nome completo" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: var(--radius); border:1px solid #ccc;">
-      <input type="tel" id="vTel" placeholder="Número de telefone" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: var(--radius); border:1px solid #ccc;">
-      <input type="email" id="vEmail" placeholder="E-mail" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: var(--radius); border:1px solid #ccc;">
-      <input type="text" id="vEnd" placeholder="Endereço" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: var(--radius); border:1px solid #ccc;">
-      <button class="btn" type="submit">Cadastrar Voluntário</button>
-    </form>
-    <p id="msgVoluntario" style="font-weight:bold; margin-top:10px;"></p>
-  </section>
 
-  <section id="contato" class="section">
-    <h2>Fale Conosco</h2>
-    <p><strong>Telefone:</strong> (11) 4002-8922</p>
-    <p><strong>Email:</strong> contato@campanhavacinacao.org</p>
-  </section>
+</footer>
 
-  </footer>
 
-  <script>
-    function inscrever(campanha) {
-      alert("Você se inscreveu na campanha: " + campanha + "!");
-    }
+<script>
+function inscrever(campanha) {
+alert("Você se inscreveu na campanha: " + campanha + "!");
+}
 
-    const form = document.getElementById('form');
-    const msg = document.getElementById('msg');
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      msg.textContent = "Cadastro realizado com sucesso!";
-      form.reset();
-    });
-      const formVol = document.getElementById('formVoluntarios');
-    const msgVol = document.getElementById('msgVoluntario');
+const form = document.getElementById('form');
+const msg = document.getElementById('msg');
 
-    formVol.addEventListener('submit', function(e) {
-      e.preventDefault();
-      msgVol.textContent = "Voluntário cadastrado com sucesso!";
-      formVol.reset();
-    });
-  </script>
+
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+msg.textContent = "Cadastro realizado com sucesso!";
+form.reset();
+});
+const formVol = document.getElementById('formVoluntarios');
+const msgVol = document.getElementById('msgVoluntario');
+
+
+formVol.addEventListener('submit', function(e) {
+e.preventDefault();
+msgVol.textContent = "Voluntário cadastrado com sucesso!";
+formVol.reset();
+});
+</script>
 </body>
 </html>
